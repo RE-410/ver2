@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d167aaduw0lde"
+path="res://.godot/imported/Training - Fire Emblem Awakening.mp3-f26788aa1a7b789fa6bbb3f996404478.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Training - Fire Emblem Awakening.mp3"
+dest_files=["res://.godot/imported/Training - Fire Emblem Awakening.mp3-f26788aa1a7b789fa6bbb3f996404478.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

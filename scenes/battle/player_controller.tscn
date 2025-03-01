@@ -1,0 +1,180 @@
+[gd_scene load_steps=12 format=3 uid="uid://daha0aanr2u3"]
+
+[ext_resource type="Script" path="res://scenes/battle/player_controller.gd" id="1_tqrl1"]
+[ext_resource type="PackedScene" uid="uid://blhyukmgao6jo" path="res://assets/characters/Player/player.tscn" id="1_xdt8v"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="2_gwedn"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="3_tcwri"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="4_205s7"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="5_8rfr1"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_is_active_guard.gd" id="6_tqgsk"]
+
+[sub_resource type="Resource" id="Resource_s1c6g"]
+script = ExtResource("6_tqgsk")
+state = NodePath("..")
+
+[sub_resource type="Resource" id="Resource_k2cn6"]
+script = ExtResource("6_tqgsk")
+state = NodePath("..")
+
+[sub_resource type="Resource" id="Resource_ap0t4"]
+script = ExtResource("6_tqgsk")
+state = NodePath("..")
+
+[sub_resource type="Resource" id="Resource_c26qn"]
+script = ExtResource("6_tqgsk")
+state = NodePath("..")
+
+[node name="PlayerController" type="Node3D"]
+script = ExtResource("1_tqrl1")
+
+[node name="Player" parent="." instance=ExtResource("1_xdt8v")]
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("2_gwedn")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("3_tcwri")
+initial_state = NodePath("RoundState")
+
+[node name="RoundState" type="Node" parent="StateChart/Root"]
+script = ExtResource("3_tcwri")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root/RoundState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionCW" type="Node" parent="StateChart/Root/RoundState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveCW")
+guard = SubResource("Resource_s1c6g")
+delay_in_seconds = "0.0"
+
+[node name="TransitionCCW" type="Node" parent="StateChart/Root/RoundState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveCCW")
+guard = SubResource("Resource_k2cn6")
+delay_in_seconds = "0.0"
+
+[node name="TransitionIn" type="Node" parent="StateChart/Root/RoundState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveIn")
+guard = SubResource("Resource_ap0t4")
+delay_in_seconds = "0.0"
+
+[node name="TransitionOut" type="Node" parent="StateChart/Root/RoundState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveOut")
+guard = SubResource("Resource_c26qn")
+delay_in_seconds = "0.0"
+
+[node name="MoveCW" type="Node" parent="StateChart/Root/RoundState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RoundState/MoveCW"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveCCW" type="Node" parent="StateChart/Root/RoundState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RoundState/MoveCCW"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveIn" type="Node" parent="StateChart/Root/RoundState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RoundState/MoveIn"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveOut" type="Node" parent="StateChart/Root/RoundState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RoundState/MoveOut"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="RectState" type="Node" parent="StateChart/Root"]
+script = ExtResource("3_tcwri")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root/RectState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionL" type="Node" parent="StateChart/Root/RectState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveL")
+guard = SubResource("Resource_s1c6g")
+delay_in_seconds = "0.0"
+
+[node name="TransitionR" type="Node" parent="StateChart/Root/RectState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveR")
+guard = SubResource("Resource_k2cn6")
+delay_in_seconds = "0.0"
+
+[node name="TransitionF" type="Node" parent="StateChart/Root/RectState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveF")
+guard = SubResource("Resource_ap0t4")
+delay_in_seconds = "0.0"
+
+[node name="TransitionB" type="Node" parent="StateChart/Root/RectState/Idle"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../MoveB")
+guard = SubResource("Resource_c26qn")
+delay_in_seconds = "0.0"
+
+[node name="MoveL" type="Node" parent="StateChart/Root/RectState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RectState/MoveL"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveR" type="Node" parent="StateChart/Root/RectState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RectState/MoveR"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveF" type="Node" parent="StateChart/Root/RectState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RectState/MoveF"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="MoveB" type="Node" parent="StateChart/Root/RectState"]
+script = ExtResource("4_205s7")
+
+[node name="TransitionIdle" type="Node" parent="StateChart/Root/RectState/MoveB"]
+script = ExtResource("5_8rfr1")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[connection signal="state_entered" from="StateChart/Root/RoundState/MoveCW" to="." method="_on_move_left_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RoundState/MoveCCW" to="." method="_on_move_right_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RoundState/MoveIn" to="." method="_on_move_forward_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RoundState/MoveOut" to="." method="_on_move_back_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RectState/MoveL" to="." method="_on_move_left_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RectState/MoveR" to="." method="_on_move_right_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RectState/MoveF" to="." method="_on_move_forward_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/RectState/MoveB" to="." method="_on_move_back_state_entered"]

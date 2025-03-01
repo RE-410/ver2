@@ -1,0 +1,29 @@
+[signal arg="enter_cutscene"]
+...
+...
+... --ey![pause=1] \
+"Hey,[pause=0.2] wake up!"
+# Add a fade-in transition to the intro cutscene.
+# *Protag gets to their feet.*
+(This is... a cave?)
+unknown: "Are you alright?[pause=1] How did you end up in here?"
+- Dunno.
+	unknown: "You... "dunno"?"
+	"I don't remember how I got here."
+	unknown: "What, so you've lost your memories?"
+	"Sure seems like it?"
+	unknown: "... You don't seem very bothered by the fact."
+	"The heck am I supposed to do about it?"
+	unknown: "Well... Fair enough."
+	"Yep. It's basically not my problem."
+	unknown: "No, it definitely still is?!"
+- I like sleeping in dank, uncomfortable caves.
+	# Store this choice for later.
+	unknown: "Oh-- ha, ha. Very funny."
+	"On a more serious note, I don't remember anything."
+	unknown: "Wait-- seriously? Say that first!"
+	"Geez, sorry. It wasn't that high on my priority list."
+	unknown: "And immediately heckling the first stranger you met was?"
+unknown: "Ugh, anyways... Let's just get out of this cave for now. We can figure out what to do about your memories once we get back to town. My name's Mina, by the way."
+Alright. Thanks, Mina.
+[signal arg="exit_cutscene"]

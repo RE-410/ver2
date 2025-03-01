@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cps2b2l8a57tg"]
+
+[ext_resource type="Script" path="res://scenes/overworld/_door.gd" id="1_0unpo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wtq5"]
+size = Vector3(3, 3, 1)
+
+[node name="Door" type="Area3D"]
+script = ExtResource("1_0unpo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_0wtq5")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

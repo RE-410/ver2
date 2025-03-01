@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyInfo" load_steps=2 format=3 uid="uid://cx4qckghll5em"]
+
+[ext_resource type="Script" path="res://tools/enemy_info/enemy_info_resource.gd" id="1_6jxkj"]
+
+[resource]
+script = ExtResource("1_6jxkj")
+fieldShape = 0
+fieldWidth = 3
+fieldDepth = 5
+fieldInnerBounds = 1
+enemyModelPath = "res://assets/enemies/Lobster/rock_lobster_model.tscn"

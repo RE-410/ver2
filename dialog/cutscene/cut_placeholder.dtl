@@ -1,0 +1,3 @@
+[signal arg="enter_cutscene"]
+Blah, blah, blah
+[signal arg="exit_cutscene"]

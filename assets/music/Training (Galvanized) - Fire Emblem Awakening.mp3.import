@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s3wa040im4c4"
+path="res://.godot/imported/Training (Galvanized) - Fire Emblem Awakening.mp3-e1ac4a8cd71e45f00c4249ca61d9d176.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Training (Galvanized) - Fire Emblem Awakening.mp3"
+dest_files=["res://.godot/imported/Training (Galvanized) - Fire Emblem Awakening.mp3-e1ac4a8cd71e45f00c4249ca61d9d176.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

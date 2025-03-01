@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhyukmgao6jo"]
+
+[ext_resource type="PackedScene" uid="uid://clot4tgvmq13p" path="res://assets/characters/Player/player_model.tscn" id="1_bju16"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ladmu"]
+radius = 0.375
+height = 1.75
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="PlayerModel" parent="." instance=ExtResource("1_bju16")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825, 0)
+shape = SubResource("CapsuleShape3D_ladmu")
