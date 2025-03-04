@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cps2b2l8a57tg"]
 
-[ext_resource type="Script" path="res://scenes/overworld/_door.gd" id="1_0unpo"]
+[ext_resource type="Script" uid="uid://8at43pglbvom" path="res://scenes/overworld/_door.gd" id="1_0unpo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wtq5"]
 size = Vector3(3, 3, 1)

@@ -1,11 +1,11 @@
-@tool
 extends Resource
 class_name AreaDatabase
 
-## Assigns each "Enemy" their models and overworld behaviors.
+@export var testlevel_0 : PackedScene
+@export var testlevel_1 : PackedScene
 
 var database := {
-	"Rock Lobster" : {
-		"model_path" : "as"
-	}
+	"testlevel_0" : testlevel_0,
+	"testlevel_1" : testlevel_1
 }
+	

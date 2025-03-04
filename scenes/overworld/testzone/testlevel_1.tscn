@@ -1,14 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://ig6f1j5jubo6"]
+[gd_scene load_steps=10 format=3 uid="uid://ig6f1j5jubo6"]
 
 [ext_resource type="MeshLibrary" uid="uid://chpwass2dol17" path="res://assets/materials/ML-rocky.tres" id="1_1d3sq"]
-[ext_resource type="Script" path="res://tools/area_info/area_info.gd" id="1_udbwp"]
+[ext_resource type="Script" uid="uid://c8u1pns8nm8a3" path="res://scenes/overworld/overworld.gd" id="1_udbwp"]
 [ext_resource type="PackedScene" uid="uid://cps2b2l8a57tg" path="res://scenes/overworld/_door.tscn" id="2_7ikwr"]
-[ext_resource type="Resource" uid="uid://cxkfymqwdjblf" path="res://tools/area_info/test_area/area_testlevel_1.tres" id="2_dpru3"]
+[ext_resource type="Texture2D" uid="uid://bc6x1dvaofnw0" path="res://assets/battle/fields/rect-grassfield.png" id="2_u4og0"]
+[ext_resource type="Texture2D" uid="uid://ut1x01hebyqc" path="res://assets/battle/fields/round-grassfield.png" id="3_j8wan"]
+[ext_resource type="AudioStream" uid="uid://s3wa040im4c4" path="res://assets/music/Training (Galvanized) - Fire Emblem Awakening.mp3" id="4_hmfw5"]
+[ext_resource type="AudioStream" uid="uid://d167aaduw0lde" path="res://assets/music/Training - Fire Emblem Awakening.mp3" id="5_afqbx"]
+[ext_resource type="Script" uid="uid://ccr6xshnryddf" path="res://tools/area_info/area_info_resource.gd" id="6_1fsbn"]
+
+[sub_resource type="Resource" id="Resource_2nfyl"]
+script = ExtResource("6_1fsbn")
+musicOverworld = ExtResource("5_afqbx")
+musicBattle = ExtResource("4_hmfw5")
+enemyList = Array[String](["Rock Lobster"])
+fieldTextureRound = ExtResource("3_j8wan")
+fieldTextureRect = ExtResource("2_u4og0")
+areaConnections = Array[String](["testarea_0"])
 
 [node name="testlevel_1" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_udbwp")
-area_info = ExtResource("2_dpru3")
+area_info = SubResource("Resource_2nfyl")
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)

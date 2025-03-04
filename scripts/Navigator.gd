@@ -1,6 +1,8 @@
 extends Node
 
+## References a dictionary of "area name":PackedScene pairs,
 
+@export var area_db : AreaDatabase 
 var area_info : AreaInfo
 
 var current_level : PackedScene

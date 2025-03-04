@@ -1,17 +1,13 @@
-[gd_resource type="Resource" script_class="AreaInfo" load_steps=7 format=3 uid="uid://c6dqclyo3iakj"]
+[gd_resource type="Resource" script_class="AreaInfo" load_steps=4 format=3 uid="uid://c0ghp1q4d3vtn"]
 
-[ext_resource type="PackedScene" uid="uid://ig6f1j5jubo6" path="res://scenes/overworld/testzone/testlevel_1.tscn" id="1_7kxfv"]
-[ext_resource type="Texture2D" uid="uid://bc6x1dvaofnw0" path="res://assets/battle/fields/rect-grassfield.png" id="2_r7bs3"]
-[ext_resource type="Texture2D" uid="uid://ut1x01hebyqc" path="res://assets/battle/fields/round-grassfield.png" id="3_3jfee"]
 [ext_resource type="AudioStream" uid="uid://s3wa040im4c4" path="res://assets/music/Training (Galvanized) - Fire Emblem Awakening.mp3" id="4_meits"]
 [ext_resource type="AudioStream" uid="uid://d167aaduw0lde" path="res://assets/music/Training - Fire Emblem Awakening.mp3" id="5_62xch"]
-[ext_resource type="Script" path="res://tools/area_info/area_info_resource.gd" id="6_30cwh"]
+[ext_resource type="Script" uid="uid://ccr6xshnryddf" path="res://tools/area_info/area_info_resource.gd" id="6_30cwh"]
 
 [resource]
 script = ExtResource("6_30cwh")
 musicOverworld = ExtResource("5_62xch")
 musicBattle = ExtResource("4_meits")
 enemyList = Array[String](["Rock Lobster"])
-fieldTextureRound = ExtResource("3_3jfee")
-fieldTextureRect = ExtResource("2_r7bs3")
-areaConnections = Array[PackedScene]([ExtResource("1_7kxfv")])
+areaConnections = Array[String](["testlevel_1"])
+metadata/_custom_type_script = "uid://ccr6xshnryddf"
