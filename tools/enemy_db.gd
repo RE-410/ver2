@@ -1,19 +1,6 @@
-@tool
 extends Resource
 class_name EnemyDatabase
 
-## Each enemy is a dictionary, with the paths to their model and overworld behavior stored as individual keys.
-
-##Enemy model scenes.
-@export var enemy: Dictionary[String, PackedScene]
-
-var parameters: Dictionary = {
-	"model": PackedScene
-}
-
-var database := {
-	"Rock Lobster" : {
-		"model" : Rock_Lobster,
-		"behavior" : Basic_roaming
-	}
-}
+## Format is "enemy_name": "scene_UID"
+# - Use text_to_id( has_id( "string" )) to test the validity of the UID.
+@export var enemy: Dictionary[String, String]

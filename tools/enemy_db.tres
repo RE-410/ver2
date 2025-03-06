@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDatabase" load_steps=2 format=3 uid="uid://b7wcdcl1ha3wg"]
+
+[ext_resource type="Script" uid="uid://t7ijup0034xw" path="res://tools/enemy_db.gd" id="1_n0ux7"]
+
+[resource]
+script = ExtResource("1_n0ux7")
+enemy = Dictionary[String, String]({
+"Rock Lobster": "uid://b7qch8r5hjrs4"
+})
+metadata/_custom_type_script = "uid://t7ijup0034xw"

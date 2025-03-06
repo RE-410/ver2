@@ -1,11 +1,6 @@
 extends Resource
 class_name AreaDatabase
 
-@export var testlevel_0 : PackedScene
-@export var testlevel_1 : PackedScene
-
-var database := {
-	"testlevel_0" : testlevel_0,
-	"testlevel_1" : testlevel_1
-}
-	
+## Format is "area_name": "scene_UID"
+# - Use text_to_id( has_id( "string" )) to test the validity of the UID.
+@export var area : Dictionary[String, String]

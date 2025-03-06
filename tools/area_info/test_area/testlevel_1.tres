@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AreaInfo" load_steps=6 format=3 uid="uid://hbf2kc3b4v32"]
+
+[ext_resource type="Texture2D" uid="uid://bc6x1dvaofnw0" path="res://assets/battle/fields/rect-grassfield.png" id="1_165pb"]
+[ext_resource type="Texture2D" uid="uid://ut1x01hebyqc" path="res://assets/battle/fields/round-grassfield.png" id="2_meq5d"]
+[ext_resource type="AudioStream" uid="uid://s3wa040im4c4" path="res://assets/music/Training (Galvanized) - Fire Emblem Awakening.mp3" id="3_vhfob"]
+[ext_resource type="AudioStream" uid="uid://d167aaduw0lde" path="res://assets/music/Training - Fire Emblem Awakening.mp3" id="4_6fnev"]
+[ext_resource type="Script" uid="uid://ccr6xshnryddf" path="res://tools/area_info/area_info_resource.gd" id="5_w35cn"]
+
+[resource]
+script = ExtResource("5_w35cn")
+musicOverworld = ExtResource("4_6fnev")
+musicBattle = ExtResource("3_vhfob")
+enemyList = Array[String](["Rock Lobster"])
+fieldTextureRound = ExtResource("2_meq5d")
+fieldTextureRect = ExtResource("1_165pb")
+areaConnections = Array[String](["testlevel_0"])
+metadata/_custom_type_script = "uid://ccr6xshnryddf"

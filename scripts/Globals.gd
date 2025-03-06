@@ -2,9 +2,15 @@ extends Node
 
 ## Stores the current overworld location in memory; should reduce hangtime when exiting battle.
 ## Stores the generic battlefields in memory; should allow for smooth transitions entering battle.
-var Overworld : PackedScene = preload("res://scenes/overworld/testzone/testlevel_0.tscn") # On new game start, load into this scene.
-var RoundField : PackedScene = preload("res://scenes/battle/round_field.tscn")
-var RectField : PackedScene = preload("res://scenes/battle/rect_field.tscn")
+var DEFAULT_OVERWORLD : PackedScene = preload("res://scenes/overworld/testzone/testlevel_0.tscn") # On new game start, load into this scene.
+var DEFAULT_ROUNDFIELD : PackedScene = preload("res://scenes/battle/round_field.tscn")
+var DEFAULT_RECTFIELD : PackedScene = preload("res://scenes/battle/rect_field.tscn")
+
+## Main scene storage.
+var main : Main
+var Overworld : Node3D
+var RoundField : Node3D
+var RectField : Node3D
 
 ## AreaInfo parameter storage.
 var musicOverworld : AudioStreamMP3
@@ -12,11 +18,14 @@ var musicBattle : AudioStreamMP3
 var enemyList : Array[String]
 var fieldTextureRound : CompressedTexture2D
 var fieldTextureRect : CompressedTexture2D
-var areaConnections : Array[String]
 
-var enemyScenes : Dictionary[String, PackedScene] 
-var areaScenes : Dictionary[String, PackedScene]
+## Using "enemy names" as keys, provides easy access to their scenes' UID paths.
+
+
+## Flags.
+# todo - Create a seperate global for flags?
 var in_cutscene : bool = false
+
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -41,7 +50,4 @@ func change_music(new_overworld : AudioStreamMP3, new_battle : AudioStreamMP3):
 	# Sets the new music tracks as the current tracks.
 	musicOverworld = new_overworld
 	musicBattle = new_battle
-	pass
-
-func change_enemyList(new_list : Array[String]):
 	pass

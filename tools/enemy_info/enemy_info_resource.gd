@@ -10,4 +10,4 @@ enum shape {ROUND, RECT}
 @export var fieldInnerBounds: int # For round fields, refers to distance from center point; for rect fields, refers to distance from rear.
 
 ## The actual "enemy info" part.
-@export var enemyModel
+#@export var enemyModel

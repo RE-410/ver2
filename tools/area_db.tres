@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AreaDatabase" load_steps=2 format=3 uid="uid://dfqmbeax5vlvf"]
+
+[ext_resource type="Script" uid="uid://c5k4yum3m3cah" path="res://tools/area_db.gd" id="1_3pa2k"]
+
+[resource]
+script = ExtResource("1_3pa2k")
+area = Dictionary[String, String]({
+"testlevel_0": "uid://drm8an7bxrr31",
+"testlevel_1": "uid://ig6f1j5jubo6"
+})
+metadata/_custom_type_script = "uid://c5k4yum3m3cah"
